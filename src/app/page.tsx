@@ -8,8 +8,8 @@ export default function Home() {
     <div className="mx-auto max-w-3xl px-8 flex pb-8 flex-col gap-20">
       <Banner />
       <Work />
+      {/* <Projects /> */}
       <Contact />
-      <Projects />
     </div>
   );
 }
