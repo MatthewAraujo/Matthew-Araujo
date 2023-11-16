@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const { withContentlayer } = require("next-contentlayer");
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
+};
+
+module.exports = withContentlayer(nextConfig);
