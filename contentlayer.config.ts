@@ -42,10 +42,10 @@ export const Project = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
-    time: { type: "string", required: true },
-    url: { type: "string", required: false },
+    url: { type: "string", required: true },
     image: { type: "string", required: true },
     tags: { type: "list", of: { type: "string" }, required: true },
+    order: { type: "number", required: true },
   },
   computedFields: projectComputedFields,
 }));

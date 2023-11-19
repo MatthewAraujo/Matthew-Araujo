@@ -25,7 +25,7 @@ export function Extracurriculars() {
               <li
                 key={extracurricular.slug}
                 className={clsx(
-                  "flex cursor-pointer flex-col gap-4 py-6 transition duration-500 first:pt-0 last:pb-0 hover:!opacity-100 group-hover:opacity-5 md:flex-row md:gap-6",
+                  "flex flex-col gap-4 py-6 transition duration-500 first:pt-0 last:pb-0 hover:!opacity-100 group-hover:opacity-5 md:flex-row md:gap-6",
                 )}
               >
                 <Link

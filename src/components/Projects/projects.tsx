@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { compareDesc } from "date-fns";
 import { allProjects } from "contentlayer/generated";
 import clsx from "clsx";
+import { Badge } from "../ui/badge";
 
 export function Projects() {
   const projects = allProjects
-    .sort((a, b) => compareDesc(new Date(a.time), new Date(b.time)))
+    .sort((a, b) => a.order - b.order)
     .filter((_, i) => i < 2);
 
   return (
@@ -25,12 +25,41 @@ export function Projects() {
               <li
                 key={project.slug}
                 className={clsx(
-                  "flex cursor-pointer flex-col gap-4 py-6 transition duration-500 first:pt-0 last:pb-0 hover:!opacity-100 group-hover:opacity-5 md:flex-row md:gap-6",
+                  "flex  flex-col gap-4 py-6 transition duration-500 first:pt-0 last:pb-0 hover:!opacity-100 group-hover:opacity-5 md:flex-row md:gap-6",
                 )}
               >
+                <div className="w-full space-y-2  md:w-3/5">
+                  <div>
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      className="font-medium text-white hover:underline"
+                    >
+                      {project.title}
+                    </Link>
+                  </div>
+
+                  <p className="line-clamp-3 text-slate-400">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 ">
+                    {
+                      project.tags.map((tech: string) => (
+                        <Badge
+                          key={tech}
+                          className="capitalize text-xs "
+                          variant="secondary"
+                        
+                        >
+                          {tech}
+                        </Badge>
+                      ))
+                    }
+                  </div>
+                </div>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="bg-tertiary w-full select-none rounded-lg md:w-2/5"
+                  className="bg-tertiary aspect-video w-full select-none overflow-clip rounded-lg md:w-2/5"
                 >
                   <Image
                     src={project.image}
@@ -41,26 +70,11 @@ export function Projects() {
                     className="rounded-lg"
                   />
                 </Link>
-                <div className="w-full space-y-2  md:w-3/5">
-                  <div>
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="font-medium text-white hover:underline"
-                    >
-                      {project.title}
-                    </Link>
-                    <time className="text-secondary"> · {project.time}</time>
-                  </div>
-
-                  <p className="line-clamp- text-slate-400">
-                    {project.description}
-                  </p>
-                </div>
               </li>
             ))}
           </ul>
           <Link href="/projects" className="text-slate-300 underline">
-             See All Projects &rarr;
+            See All Projects &rarr;
           </Link>
         </div>
       </div>
