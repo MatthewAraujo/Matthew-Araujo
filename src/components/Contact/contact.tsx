@@ -2,7 +2,7 @@ import { ArrowUpRight, Github, Linkedin, Mail, Twitch, Youtube } from "lucide-re
 
 export function Contact() {
   return (
-    <div className="flex flex-col space-y-5 w-full">
+    <section id="contact" className="flex flex-col space-y-5 w-full">
       <div>
         <p className="text-gray-500 text-xl mt-3">Contact</p>
         <p className="text-slate-200 text-md  mt-3">Feel free to contact me</p>
@@ -95,6 +95,6 @@ export function Contact() {
           <ArrowUpRight className="text-gray-300" />
         </a>
       </div>
-    </div>
+    </section>
   );
 }

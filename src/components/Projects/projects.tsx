@@ -10,7 +10,7 @@ export function Projects() {
     .filter((_, i) => i < 2);
 
   return (
-    <div id="#work" className="">
+    <div id="projects" className="">
       <p className="mt-3 text-xl text-gray-500">Projects</p>
       <div className="flex flex-col gap-5">
         <p className="text-md mt-3  text-slate-200">

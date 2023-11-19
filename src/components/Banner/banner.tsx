@@ -2,8 +2,11 @@ import { GithubIcon, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export function Banner() {
+
+
+  
   return (
-    <div id="#about" className="flex flex-col items-left gap-5">
+    <div id="about" className="flex flex-col items-left gap-5 pt-24">
       <div>
         <h1 className="text-slate-200 text-xl font-bold">Matthew Araujo</h1>
         <h2 className="text-gray-500">FullStack Developer</h2>
