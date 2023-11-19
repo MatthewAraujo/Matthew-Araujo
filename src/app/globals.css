@@ -66,6 +66,11 @@
   }
 }
  
+.single-pages img{
+  @apply rounded-lg;
+  @apply shadow-lg;
+  @apply w-[550px];
+}
 @layer base {
   * {
     @apply border-border;

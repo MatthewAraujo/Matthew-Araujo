@@ -1,16 +1,56 @@
-// contentlayer.config.ts
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import {
+  ComputedFields,
+  defineDocumentType,
+  makeSource,
+} from "contentlayer/source-files";
 
-export const Post = defineDocumentType(() => ({
-  name: 'Post',
-  filePathPattern: `**/*.md`,
+const getSlug = (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, "");
+
+const ExtracurricularComputedFields: ComputedFields = {
+  slug: {
+    type: "string",
+    resolve: (doc) => getSlug(doc),
+  },
+};
+
+export const Extracurricular = defineDocumentType(() => ({
+  name: "Extracurricular",
+  filePathPattern: `extracurricular/**/*.mdx`,
+  contentType: "mdx",
   fields: {
-    title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
+    title: { type: "string", required: true },
+    description: { type: "string", required: true },
+    time: { type: "string", required: true },
+    url: { type: "string", required: false },
+    image: { type: "string", required: true },
+    tags: { type: "list", of: { type: "string" }, required: true },
   },
-  computedFields: {
-    url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
-  },
-}))
+  computedFields: ExtracurricularComputedFields,
+}));
 
-export default makeSource({ contentDirPath: 'posts', documentTypes: [Post] })
+const projectComputedFields: ComputedFields = {
+  slug: {
+    type: "string",
+    resolve: (doc) => getSlug(doc),
+  },
+};
+
+export const Project = defineDocumentType(() => ({
+  name: "Project",
+  filePathPattern: `project/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    description: { type: "string", required: true },
+    time: { type: "string", required: true },
+    url: { type: "string", required: false },
+    image: { type: "string", required: true },
+    tags: { type: "list", of: { type: "string" }, required: true },
+  },
+  computedFields: projectComputedFields,
+}));
+
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [Project, Extracurricular],
+});

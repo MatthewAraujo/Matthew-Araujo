@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 export default function Work({ params }: { params: { workId: string } }) {
   const paramsId = params || { workId: "workId" };
   const workId = jobs.filter(
-    (job) => job.job === paramsId.workId.replaceAll(/%20/g, " ")
+    (job) => job.job === paramsId.workId.replaceAll(/%20/g, " "),
   );
 
   if (workId.length === 0) {
@@ -14,8 +14,8 @@ export default function Work({ params }: { params: { workId: string } }) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-8 pb-8 overflow-hidden">
-      <div className="flex flex-col gap-5 group">
+    <div className="mx-auto max-w-3xl overflow-hidden px-8 pb-8">
+      <div className="group flex flex-col gap-5">
         {workId.map(
           ({ id, job, src, title, year, description, stacks, projects }) => {
             return (
@@ -23,7 +23,7 @@ export default function Work({ params }: { params: { workId: string } }) {
                 <div>
                   <p className="text-gray-400">{year}</p>
                   <h1 className="text-4xl font-bold text-slate-50">{title}</h1>
-                  <div className="flex flex-col sm:flex-row  sm:items-center gap-2 h-fit">
+                  <div className="flex h-fit flex-col  gap-2 sm:flex-row sm:items-center">
                     <p className="text-gray-400">{description}</p>
                     <div>
                       <Image
@@ -31,11 +31,11 @@ export default function Work({ params }: { params: { workId: string } }) {
                         alt={job}
                         width={300}
                         height={300}
-                        className="rounded-lg w-48 sm:w-96"
+                        className="w-48 rounded-lg sm:w-96"
                       />
                     </div>
                   </div>
-                  <div className="flex gap-5 mt-5 flex-wrap">
+                  <div className="mt-5 flex flex-wrap gap-5">
                     {stacks?.map((stack) => {
                       return (
                         <Badge
@@ -49,9 +49,10 @@ export default function Work({ params }: { params: { workId: string } }) {
                     })}
                   </div>
 
-                  <div className="flex flex-col space-y-5 mt-5">
-                    <p className="text-gray-400 text-lg">
-                      Some projects I participated in during my time at <span className="capitalize text-slate-50">{job}</span>
+                  <div className="mt-5 flex flex-col space-y-5">
+                    <p className="text-lg text-gray-400">
+                      Some projects I participated in during my time at{" "}
+                      <span className="capitalize text-slate-50">{job}</span>
                     </p>
                     {projects?.map(({ id, title, description }) => {
                       return (
@@ -61,7 +62,6 @@ export default function Work({ params }: { params: { workId: string } }) {
                           </h1>
                           <p className="text-gray-400 ">{description.first}</p>
                           <p className="text-gray-400 ">{description.second}</p>
-
                         </div>
                       );
                     })}
@@ -69,7 +69,7 @@ export default function Work({ params }: { params: { workId: string } }) {
                 </div>
               </div>
             );
-          }
+          },
         )}
       </div>
     </div>
