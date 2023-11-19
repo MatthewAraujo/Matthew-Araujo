@@ -11,7 +11,7 @@ export default function Extracurricular({ params }: { params: any }) {
   }
 
   return (
-    <div className="single-pages mx-auto max-w-3xl px-8 pt-24">
+    <div className="single-pages mx-auto max-w-3xl px-8 pt-28">
       <div className="flex flex-col gap-20">
         <article>
           <div className="flex flex-col gap-3 animate-in">

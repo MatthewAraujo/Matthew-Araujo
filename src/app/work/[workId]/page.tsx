@@ -14,7 +14,7 @@ export default function Work({ params }: { params: { workId: string } }) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl overflow-hidden px-8 pb-8 pt-24">
+    <div className="mx-auto max-w-3xl overflow-hidden px-8 pb-8 pt-28">
       <div className="group flex flex-col gap-5">
         {workId.map(
           ({ id, job, src, title, year, description, stacks, projects }) => {
