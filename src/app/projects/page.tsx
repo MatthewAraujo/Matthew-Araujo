@@ -36,7 +36,6 @@ export default function Projects() {
                     alt={project.title}
                     width={550}
                     height={248}
-                    layout="responsive"
                     className="rounded-lg"
                   />
                 </Link>
