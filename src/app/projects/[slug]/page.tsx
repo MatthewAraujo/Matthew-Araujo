@@ -1,13 +1,8 @@
-import { allProjects, Post as PostType } from ".contentlayer/generated";
+import { allProjects } from ".contentlayer/generated";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-type PostProps = {
-  post: PostType;
-  related: PostType[];
-};
 
 export default function Project({ params }: { params: any }) {
   // const post = allPosts.find((post) => post.slug === params.slug);
