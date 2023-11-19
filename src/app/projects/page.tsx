@@ -8,7 +8,7 @@ export default function Projects() {
   const projects = allProjects.sort((a, b) => a.order - b.order);
 
   return (
-    <div id="#work" className="mx-auto max-w-3xl pb-20 pt-24">
+    <div id="#work" className="mx-auto max-w-3xl pb-20 px-8 pt-24">
       <p className="mt-3 text-xl text-gray-500">Projects</p>
       <div className="flex flex-col gap-5">
         <p className="text-md mt-3  text-slate-200">
