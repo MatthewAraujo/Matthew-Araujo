@@ -12,7 +12,7 @@ import Image from "next/image";
 export function Navbar() {
   return (
     <>
-      <div className="fixed w-full">
+      <div className="fixed w-full bg-zinc-900">
         <div className="mx-auto flex	max-w-3xl justify-between p-8">
           <h1 className="text-2xl text-slate-200">
             <a href="/">
