@@ -68,7 +68,7 @@ export default function Extracurricular({ params }: { params: any }) {
           </div>
 
           <Link href="/" className="text-slate-300 underline">
-            ← All Extracurriculars
+            ← Home
           </Link>
         </div>
 

@@ -68,6 +68,9 @@ export default function Projects() {
               </li>
             ))}
           </ul>
+          <Link href="/" className="text-slate-300 underline">
+            ← Home
+          </Link>
         </div>
       </div>
     </div>

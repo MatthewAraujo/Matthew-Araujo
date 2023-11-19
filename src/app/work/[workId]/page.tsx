@@ -2,6 +2,7 @@ import { Page404 } from "@/components/404";
 import { jobs } from "@/components/Workplaces/workplaceJobs";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function Work({ params }: { params: { workId: string } }) {
   const paramsId = params || { workId: "workId" };
@@ -71,6 +72,9 @@ export default function Work({ params }: { params: { workId: string } }) {
             );
           },
         )}
+         <Link href="/" className="text-slate-300 underline">
+            ← Home
+          </Link>
       </div>
     </div>
   );
