@@ -1,9 +1,35 @@
 export const jobs = [
+ {
+    id: 0,
+    title: "Data Science",
+    job: "Ipnet",
+    year: "2023 - Present",
+    src: "/ipnet.png",
+    href: "/work/ipnet",
+    description:
+      "Responsible for the development of various websites and features using JavaScript, Next.js, and PHP. Demonstrated skills in both back-end (PHP) and front-end (Next.js) development. Worked in environments for code testing and version control with Git (Bitbucket). Actively participated in daily stand-ups and maintained codes in various websites and systems.",
+    stacks: [
+      "Python",
+      "Google Cloud"
+    ],
+    projects: [
+      {
+        id: 1,
+        title: "Cool Travel",
+        description: {
+          first:
+            "Cool Travel is an exciting project crafted with headless WordPress, incorporating GraphQL custom fields and powered by Next.js on the frontend. Notably, dynamic routes have been implemented to provide a personalized user experience. ",
+          second:
+            "Additionally, I have integrated forms with validation to ensure data accuracy and security, enhancing the interactivity and usability of the project. The project also features a custom CMS, allowing the client to easily manage content and update the website.",
+        },
+      },
+    ],
+  },
   {
     id: 1,
     title: "Full Stack Engineer",
     job: "internit",
-    year: "2022 - Present",
+    year: "2022 - 2023",
     src: "/internit.jpeg",
     href: "/work/internit",
     description:
